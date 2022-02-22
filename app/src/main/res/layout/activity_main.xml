@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="-41.2924"
+        mapbox:mapbox_cameraTargetLng="174.7787"
+        mapbox:mapbox_cameraZoom="14">
+
+        <Button
+            android:id="@+id/btn_api"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="get_Api"
+            android:text="@string/btn_api" />
+
+
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+</FrameLayout>
