@@ -16,6 +16,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.mapbox.android.core.location.LocationEngine;
+import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
@@ -24,6 +26,7 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
@@ -52,7 +55,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final String ICON_ID = "ICON_ID";
     private static final String LAYER_ID = "LAYER_ID";
     private MapView mapView;
-    Button btn_api;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                                     @Override
                                     public void onStyleLoaded(@NonNull Style style) {
-                                        // Map is set up and the style has loaded. Now you can add additional data or make other map adjustments.
+                                        // Map is set up and the style has loaded.
                                     }
                                 });
                                 }
@@ -136,33 +140,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         queue.add(stringRequest);
 
     }
-
-
-    //call Mevo endpoints to get JSON data
-    public void get_Api(View view) {
-
-        // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://api.mevo.co.nz/public/vehicles/wellington";
-
-        // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
-            }
-        });
-        // Add the request to the RequestQueue.
-        queue.add(stringRequest);
-    }
-
 
     @Override
     protected void onStart() {

@@ -7,31 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    <Button-->
+<!--        android:id="@+id/vehiclesBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="600dp"-->
+<!--        android:backgroundTint="@color/mevoColour"-->
+<!--        android:text="Vehicles"-->
+<!--        mapbox:layout_constraintBottom_toBottomOf="parent"-->
+<!--        mapbox:layout_constraintEnd_toEndOf="parent"-->
+<!--        mapbox:layout_constraintStart_toStartOf="parent"-->
+<!--        mapbox:layout_constraintTop_toTopOf="parent" />-->
 
-
-    <Button
-        android:id="@+id/vehiclesBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:backgroundTint="@color/mevoColour"
-        android:text="Vehicles"
-        mapbox:layout_constraintBottom_toBottomOf="parent"
-        mapbox:layout_constraintEnd_toEndOf="parent"
-        mapbox:layout_constraintStart_toStartOf="parent"
-        mapbox:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/parkingBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="600dp"
-        android:backgroundTint="@color/mevoColour"
-        android:text="Parking"
-        mapbox:layout_constraintBottom_toBottomOf="parent"
-        mapbox:layout_constraintStart_toEndOf="@+id/vehiclesBtn"
-        mapbox:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/parkingBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="600dp"-->
+<!--        android:backgroundTint="@color/mevoColour"-->
+<!--        android:text="Parking"-->
+<!--        mapbox:layout_constraintBottom_toBottomOf="parent"-->
+<!--        mapbox:layout_constraintStart_toEndOf="@+id/vehiclesBtn"-->
+<!--        mapbox:layout_constraintTop_toTopOf="parent" />-->
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
