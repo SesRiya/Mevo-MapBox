@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:mapbox="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/vehiclesBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:backgroundTint="@color/mevoColour"
+        android:text="Vehicles"
+        mapbox:layout_constraintBottom_toBottomOf="parent"
+        mapbox:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/parkingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="600dp"
+        android:backgroundTint="@color/mevoColour"
+        android:text="Parking"
+        mapbox:layout_constraintBottom_toBottomOf="parent"
+        mapbox:layout_constraintStart_toEndOf="@+id/vehiclesBtn"
+        mapbox:layout_constraintTop_toTopOf="parent" />
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
@@ -13,16 +36,10 @@
         android:layout_height="match_parent"
         mapbox:mapbox_cameraTargetLat="-41.2924"
         mapbox:mapbox_cameraTargetLng="174.7787"
-        mapbox:mapbox_cameraZoom="14">
-
-        <Button
-            android:id="@+id/btn_api"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="get_Api"
-            android:text="@string/btn_api" />
+        mapbox:mapbox_cameraZoom="12"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="-98dp">
 
 
     </com.mapbox.mapboxsdk.maps.MapView>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

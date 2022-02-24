@@ -27,6 +27,7 @@ import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
+import com.mapbox.mapboxsdk.utils.BitmapUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,9 +57,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //assign value to each control on the layout
-        btn_api = findViewById(R.id.btn_api);
 
         // Mapbox access token is configured here.
         Mapbox.getInstance(this, getString(R.string.access_token));
@@ -108,10 +106,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         .withSource(new GeoJsonSource(SOURCE_ID,
                                                 FeatureCollection.fromFeatures(symbolLayerIconFeatureList)))
 
-                                        // Adding the actual SymbolLayer to the map style. An offset is added that the bottom of the red
-                                        // marker icon gets fixed to the coordinate, rather than the middle of the icon being fixed to
-                                        // the coordinate point. This is offset is not always needed and is dependent on the image
-                                        // that you use for the SymbolLayer icon.
+                                        // Adding the actual SymbolLayer to the map style.
                                         .withLayer(new SymbolLayer(LAYER_ID, SOURCE_ID)
                                                 .withProperties(
                                                         iconImage(ICON_ID),
@@ -141,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         queue.add(stringRequest);
 
     }
-
 
 
     //call Mevo endpoints to get JSON data
@@ -212,5 +206,4 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.onDestroy();
     }
 
-    GeoJsonSource test;
 }

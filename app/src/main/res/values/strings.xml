@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MapBox</string>
+    <string name="app_name">MEVO</string>
     <string name="access_token">pk.eyJ1IjoicmhlYWciLCJhIjoiY2t6dXRlN3FvNDB1bDJvcGEyNDlkaDE3dyJ9.ZACy7_tT0MV0boQMB747ug</string>
     <string name="btn_api">GetApi</string>
 </resources>
